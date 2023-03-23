@@ -1,0 +1,79 @@
+
+LİBRARY App
+
+A.	İşin Tanımı	: Mr Candy Company
+	İçerik (DB);
+		-	Pastalar,
+		-	Çaylar
+		-	Kahveler,
+		-	Frappeler,
+		-	Çikolatalar,
+		-	Ekipmanlar,
+		-	Kokteyl Şuruplar,
+		-	Soslar ve Şantiler,
+		-	Meyve Püreleri,
+		-	Limonatalar
+
+	+ Kataloglar
+		-	Kahve Kt.
+		-	Otel Pastaları,
+		-	Gurme Kataloğu,
+		-	Vitrin Pastaları,
+		-	Market Kataloglar
+		-	Düğün ve Nişan Kataloğu,
+		-	Kahve Pasta Menusu,
+		-	Pasta Kataloğu-"
+		-	Pasta Kataloğu-2
+
+
+B.	İş Sırası
+
+1.	Dependency
+
+	npm install ...;
+	-	fireBase
+	-	axios
+	-	redux, react-redux
+	-	react-router-dom
+	-	bootstrap (public/index dosyasına css ve script tagları ile bağlanacak)
+
+2.	Veri yapısının ve json-server yapısının kurulması
+	-	fireStore
+	-	Authentication
+
+3.	Redux altyapısının kurulması
+	-	store'da bulunacak STATE'lerin belirlenmesi
+	-	redux klasörü;
+		+	actions klasörü
+			actionTypes.js
+				const actionTypes = {
+									booksActions:{},
+									categoriesActions:{}
+									}
+		+	reducers klasörü
+			booksReducer.js
+			categoriesReducer.js
+		+	store.js
+			
+4.	Router Dom yapısını kurmak 
+	"*" ile "Not Found" sayfası kur. 
+	<Route path={"*"} element ={<NotFound/>} />
+
+5.	Uygulama açılırken Redux içerisindeki STATE'lerin içini doldurmak
+
+6.	axios'ı etkin kullanmak ve hataları azaltmak için api klasörü kurulur.
+	-api klasörü
+		+	api.js
+			const api = axios.create({
+							baseURL:"http://localhost:3004"
+									})
+		+	urls.js
+			const urls = {
+							books:"/books",
+							categories:"/categories"
+						}
+
+7.	İhtiyaç duyulacak js fonksiyonlar vs;
+	-	utils klasörü
+		+	functions.js
+
