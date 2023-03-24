@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const lemonadesReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.lemonadesActions.GET_LEMONADES_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const lemonadesReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				lemonades:[...state.lemonades,action.payload],
+				lemonades:action.payload,
 			}
 
 		case ActionTypes.lemonadesActions.GET_LEMONADES_FAIL:

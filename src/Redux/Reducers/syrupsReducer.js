@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const syrupsReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.syrupsActions.GET_SYRUPS_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const syrupsReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				syrups:[...state.syrups,action.payload],
+				syrups:action.payload,
 			}
 
 		case ActionTypes.syrupsActions.GET_SYRUPS_FAIL:

@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const chocolatesReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.chocolateActions.GET_CHOCOLATE_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const chocolatesReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				chocolates:[...state.chocolates,action.payload],
+				chocolates:action.payload,
 			}
 
 		case ActionTypes.chocolateActions.GET_CHOCOLATE_FAIL:

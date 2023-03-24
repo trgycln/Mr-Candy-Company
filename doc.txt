@@ -36,6 +36,7 @@ B.	İş Sırası
 	-	redux, react-redux
 	-	react-router-dom
 	-	bootstrap (public/index dosyasına css ve script tagları ile bağlanacak)
+	-	SCSS
 
 2.	Veri yapısının ve json-server yapısının kurulması
 	-	fireStore

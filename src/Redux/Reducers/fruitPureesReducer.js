@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const fruitPureesReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.fruitPureesActions.GET_FRUITPUREES_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const fruitPureesReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				fruitPurees:[...state.fruitPurees,action.payload],
+				fruitPurees:action.payload,
 			}
 
 		case ActionTypes.fruitPureesActions.GET_FRUITPUREES_FAIL:

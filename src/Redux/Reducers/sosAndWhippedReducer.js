@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const sosAndWhippedsReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.sosAndwhippedActions.GET_SOS_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const sosAndWhippedsReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				sosAndWhippeds:[...state.sosAndWhippeds,action.payload],
+				sosAndWhippeds:action.payload,
 			}
 
 		case ActionTypes.sosAndwhippedActions.GET_SOS_FAIL:

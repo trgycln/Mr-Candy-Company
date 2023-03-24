@@ -11,7 +11,7 @@ const initialState = {
 
 const teasReducer = (state=initialState, action)=> {
 
-switch (action.payload) {
+switch (action.type) {
 	case ActionTypes.teasActions.GET_TEAS_START:
 		
 		return {
@@ -24,7 +24,7 @@ switch (action.payload) {
 			...state,
 			pending:false,
 			success:true,
-			teas:[...state.teas,action.payload]
+			teas:action.payload
 		}
 
 	case ActionTypes.teasActions.GET_TEAS_FAIL:

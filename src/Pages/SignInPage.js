@@ -7,6 +7,8 @@ const SignInPage = () => {
     email: "",
     password: "",
   });
+  const [errorType, setErrorType]=useState("")
+  const [errorMessage,setErrorMessage]=useState("")
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -14,15 +16,18 @@ const SignInPage = () => {
     /* Validation */
 
     if (formStates.email === "") {
-      alert("e-posta adresi boş bırakılamaz");
+      setErrorType("email")
+      setErrorMessage("Kullanıcı adı boş bırakılamaz")
       return;
     }
     if (formStates.password === "") {
-      alert("Parola boş bırakılamaz");
+      setErrorType("password")
+      setErrorMessage("Parola boş bırakılamaz")
       return;
     }
     if (formStates.password.length < 6) {
-      alert("parola en az 6 karakter olmalıdır");
+      setErrorType("passwordLenght")
+      setErrorMessage("Parola en az 6 karakter olmalıdır")
       return;
     }
 
@@ -63,6 +68,9 @@ const SignInPage = () => {
                 setFormStates({ ...formStates, email: e.target.value });
               }}
             />
+            {
+              errorType==="email" ? <p style={{color:"red"}}><small>{errorMessage} </small></p> : null
+            }
           </div>
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
@@ -82,6 +90,12 @@ const SignInPage = () => {
                 });
               }}
             />
+             {
+              errorType==="password" && (<p style={{color:"red"}}><small>{errorMessage} </small></p>)
+            }
+            {
+              errorType==="passwordLenght" && (<p style={{color:"red"}}><small>{errorMessage} </small></p>)
+            }
           </div>
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn btn-primary">

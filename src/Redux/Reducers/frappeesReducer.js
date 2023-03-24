@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const frappeesReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.frappesActions.GET_FRAPPES_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const frappeesReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				coffes:[...state.frapees,action.payload],
+				coffes:action.payload,
 			}
 
 		case ActionTypes.frappesActions.GET_FRAPPES_FAIL:

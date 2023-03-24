@@ -5,12 +5,11 @@ const initialState = {
 		success:false,
 		cakes:[],
 		error:false,
-		errorMessage:""
+		errorMessage:"",
 	}
 
-
-const cakesReducer = (state=initialState,action)=>{
-switch (action.payload) {
+const cakesReducer = (state=initialState, action)=>{
+switch (action.type) {
 
 	case ActionTypes.cakesActions.GET_CAKES_START:
 	return {
@@ -23,7 +22,7 @@ switch (action.payload) {
 			...state,
 			pending:false,
 			success:true,
-			cakes:[...state.cakes,action.payload],
+			cakes:action.payload,
 			error:false
 		}
 	
@@ -36,6 +35,20 @@ switch (action.payload) {
 			errorMessage:action.payload
 		}
 
+	case ActionTypes.cakesActions.ADD_CAKE:
+		return {
+			...state,
+			cakes:[...state.cakes, action.payload]
+		}
+
+	case ActionTypes.cakesActions.DELETE_CAKE:
+		
+		const tempArr=state.cakes.filter(item=>item.id!==action.payload)
+
+		return {
+			...state,
+			cakes:tempArr
+		}
 	default:
 		return state;
 }

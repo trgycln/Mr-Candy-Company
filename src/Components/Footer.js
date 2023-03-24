@@ -16,7 +16,7 @@ const handleSignOut = ()=>{
   return (
     <footer
       style={{
-        position: "absolute",
+        position: "fixed",
         width: "100%",
         height: "10vh",
         bottom: "0",

@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const coffeesReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.cofeesActions.GET_COFFEES_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const coffeesReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				coffes:[...state.cofees,action.payload],
+				coffes:action.payload,
 			}
 
 		case ActionTypes.cofeesActions.GET_COFFEES_FAIL:

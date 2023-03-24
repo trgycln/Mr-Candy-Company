@@ -1,4 +1,5 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
+import { getFirestore } from "firebase/firestore";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -27,3 +28,5 @@ export const signUp = async (name, email, password) => {
 export const signIn = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const db = getFirestore(app)

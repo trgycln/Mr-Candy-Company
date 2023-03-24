@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to={"/"} >
-            Navbar
+            Mr Candy Company
           </Link>
           <button
             className="navbar-toggler"
@@ -24,12 +24,12 @@ const Header = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to={"/"}>
-                  Home
+                  Anasayfa
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link">
-                  Link
+                <Link to={"/about"} className="nav-link">
+                  Hakkımızda
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -40,25 +40,24 @@ const Header = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Ürünler
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link className="dropdown-item" >
-                      Action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item">
-                      Another action
-                    </Link>
-                  </li>
+                  <li><Link className="dropdown-item" >Pastalar</Link></li>
+                  <li><Link className="dropdown-item">Çikolatalar</Link></li>
+                  <li><Link className="dropdown-item">Frappeler</Link></li>
+                  <li><Link className="dropdown-item">Meyve Püreleri</Link></li>
+                  <li><Link className="dropdown-item">Soslar ve Şantiler</Link></li>
+                  <li><Link className="dropdown-item">Kokteyl Şuruplar</Link></li>
+                  <li><Link className="dropdown-item">Çaylar</Link></li>
+                  <li><Link className="dropdown-item">Kahveler</Link></li>
+                  <li><Link className="dropdown-item">Limonatalar</Link></li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
                     <Link className="dropdown-item">
-                      Something else here
+                      Ekipmanlar
                     </Link>
                   </li>
                 </ul>

@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const equipmentsReducer = (state=initialState, action)=>{
-	switch (action.payload) {
+	switch (action.type) {
 		case ActionTypes.equipmentsActions.GET_EQUİPMENTS_START:
 			return{
 				...state,
@@ -22,7 +22,7 @@ const equipmentsReducer = (state=initialState, action)=>{
 				...state,
 				pending:false,
 				success:true,
-				equipments:[...state.equipments,action.payload],
+				equipments:action.payload,
 			}
 
 		case ActionTypes.equipmentsActions.GET_EQUİPMENTS_FAIL:
